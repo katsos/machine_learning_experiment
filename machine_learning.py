@@ -15,3 +15,26 @@ from sklearn.svm import SVC
 url = "https://raw.githubusercontent.com/jbrownlee/Datasets/master/iris.csv"
 names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width', 'class']
 dataset = pandas.read_csv(url, names=names)
+
+print(f'Shape: {dataset.shape}')
+print()
+print('First 10 entries')
+print(dataset.head(10))
+print()
+print('Statistical Summary')
+print(dataset.describe())
+print()
+print('Class distribution')
+print(dataset.groupby('class').size())
+
+# box and whiskers
+# dataset.plot(kind='box', subplots=True)
+# plt.show()
+
+# histograms
+# dataset.hist()
+# plt.show()
+
+# # scatter plot matrix
+# scatter_matrix(dataset)
+# plt.show()
