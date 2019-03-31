@@ -69,3 +69,11 @@ for name, model in models:
 	results.append(cv_results)
 	names.append(name)
 	print(f'{name}: {cv_results.mean()} ({cv_results.std()})')
+
+# Compare Algorithms
+fig = plt.figure()
+fig.suptitle('Algorithm Comparison')
+ax = fig.add_subplot(111)
+plt.boxplot(results)
+ax.set_xticklabels(names)
+plt.show()
